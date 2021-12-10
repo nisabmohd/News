@@ -1,11 +1,11 @@
 ## News App made with react
 ### packages used :
-#### 1 . axios
-#### 2 . gh pages
+#### axios
+#### gh pages
 #### Check out the deployment : https://nisabmohd.github.io/news/
 
-#### Learned
-axios
+#### Learned : 
+##### axios
 
 
 #### Screenshots : 

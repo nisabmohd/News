@@ -1,0 +1,40 @@
+.flatico{
+    width: 25px;
+    height: 25px;
+}
+.leftbar{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: fit-content;
+    padding: 0 14px;
+    z-index: 999;
+    background-color: rgb(255, 255, 255);
+}
+.country{
+    display: flex;
+    flex-direction: column;
+}
+.country img{
+    margin:16px 0;
+    cursor: pointer;
+}
+.logoimg{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 9vh;
+    margin-top: 32px;
+
+}
+@media screen and (max-width:500px){
+    .leftbar{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: fit-content;
+        padding: 0 4px;
+        z-index: 999;
+        background-color: rgb(255, 255, 255);
+    }
+   
+}

@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+.pageframe{
+  display: flex;
+  flex-direction: column;
+}
+.newsframe{
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.bottompage{
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width:470px){
+  .newsframe{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+}

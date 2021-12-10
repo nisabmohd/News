@@ -1,4 +1,4 @@
-## News App made with react
+## News app made with react
 ### packages used :
 #### axios
 #### gh pages

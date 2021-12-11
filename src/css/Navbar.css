@@ -62,3 +62,8 @@
         display: none;
     }
 }
+@media screen and (max-width:1002px){
+    .tagsnavbar p{
+        margin: 0 30px;
+    }
+}

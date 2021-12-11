@@ -9,8 +9,8 @@ export default function Navbar(props) {
     function searchdata(e){
         setsearch(e.target.value)
     }
-    function sendsearch(b){
-        props.s(b)
+    function sendsearch(){
+        props.s(sr)
     }
     return (
         <div>
@@ -18,7 +18,7 @@ export default function Navbar(props) {
                 <div className="tagsnavbar">
                     {/* <p onClick={()=>demoMethod('all')}>#All</p> */}
                     <p onClick={() => demoMethod('sports')}>#Sports</p>
-                    <p onClick={() => demoMethod('buissness')}>#Buissness</p>
+                    <p onClick={() => demoMethod('business')}>#Business</p>
                     <p onClick={() => demoMethod('science')}>#Science</p>
                     <p onClick={() => demoMethod('entertainment')}>#Entertainment</p>
                     <p onClick={() => demoMethod('health')}>#Health</p>

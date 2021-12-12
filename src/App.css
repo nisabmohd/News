@@ -39,6 +39,9 @@
 .pageframe{
   display: flex;
   flex-direction: column;
+  /* overflow-y: scroll; */
+  margin: auto;
+  width: 98%;
 }
 .newsframe{
   padding-top: 20px;
@@ -55,4 +58,12 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
   }
+}
+
+.buttons{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }

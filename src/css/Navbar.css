@@ -1,7 +1,9 @@
 .navbar{
     display: flex;
     flex-direction: row;
-    padding: 35px 6px;
+    padding: 35px 30px;
+    padding-left: 52px;
+    padding-right: 22px;
 }
 .tagsnavbar{
     width: 80%;
@@ -25,8 +27,9 @@
     align-items: center;
     width:fit-content;
     justify-content: stretch;
-    padding: 0 6px;
+    padding: 0 12px;
     padding-bottom: 6px;
+    margin-right: 12px;
 }
 .searchbarnav input{
     border: none;
@@ -62,7 +65,7 @@
         display: none;
     }
 }
-@media screen and (max-width:1002px){
+@media screen and (max-width:500px){
     .tagsnavbar p{
         margin: 0 30px;
     }

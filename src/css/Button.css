@@ -1,0 +1,22 @@
+.btns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  
+}
+.btns button{
+    width:fit-content;
+    padding: 12px 50px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 30px 50px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: rgb(88, 88, 88);
+    font-size: 13px;
+    border: 1px solid gray;
+}

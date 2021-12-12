@@ -1,15 +1,23 @@
 import './App.css';
-import Home from './Home';
 import Navbar from './Navbar.js'
 import Leftbar from './Leftbar';
+import './css/Button.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Newsframe from './Newsframe';
 function App() {
+
+  //
+
+  // your API key there in double quotes
+  const apikey="0ab64559a1ff44cbbe217684e5b02839"
+
+  //
   const [news, setNews] = useState([]);
   const [country, setCountry] = useState('us');
   const [cat, setCat] = useState('general')
-  const [api, setApi] = useState(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=0ab64559a1ff44cbbe217684e5b02839`)
+  const [page, setPage] = useState(1)
+  const [api, setApi] = useState(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apikey}&page=${page}`)
   useEffect(() => {
     async function getData() {
       const response = await axios.get(api)
@@ -19,15 +27,15 @@ function App() {
   }, [api])
   function changecat(valuect) {
     setCat(valuect)
-    setApi(`https://newsapi.org/v2/everything?q=${cat}&apiKey=0ab64559a1ff44cbbe217684e5b02839`)
+    setApi(`https://newsapi.org/v2/everything?q=${cat}&apiKey=${apikey}&page=${page}`)
   }
   function changecountry(value) {
     setCountry(value);
-    setApi(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=0ab64559a1ff44cbbe217684e5b02839`)
+    setApi(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apikey}&${page}`)
   }
-  function srch(valuesrch){
+  function srch(valuesrch) {
     setCat(valuesrch)
-    setApi(`https://newsapi.org/v2/everything?q=${cat}&apiKey=0ab64559a1ff44cbbe217684e5b02839`)
+    setApi(`https://newsapi.org/v2/everything?q=${cat}&apiKey=${apikey}&page=${page}`)
   }
   return (
     <div className="App">
@@ -45,9 +53,14 @@ function App() {
             }
 
           </div>
+          <div className="buttons">
+            <div className='btns'>
+              <button disabled={page===1} onClick={()=>setPage(page - 1)}>Previous</button>
+              <button onClick={()=>setPage(page + 1)}>Next</button>
+            </div>
+          </div>
         </div>
       </div>
-      <Home />
     </div>
   );
 }

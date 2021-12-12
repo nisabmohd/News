@@ -16,14 +16,13 @@ export default function Navbar(props) {
         <div>
             <div className="navbar">
                 <div className="tagsnavbar">
-                    {/* <p onClick={()=>demoMethod('all')}>#All</p> */}
-                    <p onClick={() => demoMethod('sports')}>#Sports</p>
+                    <p onClick={() => demoMethod('general')}>#General</p>
                     <p onClick={() => demoMethod('business')}>#Business</p>
+                    <p onClick={() => demoMethod('sports')}>#Sports</p>
+                    <p onClick={() => demoMethod('health')}>#Health</p>
                     <p onClick={() => demoMethod('science')}>#Science</p>
                     <p onClick={() => demoMethod('entertainment')}>#Entertainment</p>
-                    <p onClick={() => demoMethod('health')}>#Health</p>
                     <p onClick={() => demoMethod('technology')}>#Technology</p>
-                    <p onClick={() => demoMethod('general')}>#General</p>
                 </div>
                 <div className="searchbarnav">
                     <input onChange={searchdata} type="text" placeholder="Search" id="" />

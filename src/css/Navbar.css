@@ -10,7 +10,8 @@
     display: flex;
     flex-direction: row;
     /* overflow-x: scroll; */
-    margin-left: auto;
+    margin-left:auto;
+    padding-left: 65px;
 }
 .tagsnavbar p{
     font-size: 15px;

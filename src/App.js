@@ -19,6 +19,8 @@ function App() {
     async function getData() {
       const response = await axios.get(api)
       setNews(response.data.articles);
+      
+      return ()=>{setNews("");setCat('');setCountry('');setApi('')}
     }
     getData()
   }, [api])

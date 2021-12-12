@@ -1,6 +1,6 @@
 .flatico{
-    width: 25px;
-    height: 25px;
+    width: 27px;
+    height: 27px;
 }
 .leftbar{
     display: flex;
@@ -10,6 +10,8 @@
     padding: 0 14px;
     z-index: 999;
     background-color: rgb(255, 255, 255);
+    border-right: 0.1px solid rgb(248, 248, 248);
+    box-shadow: inset;
     position: fixed;
     top:2px;
 }
@@ -22,8 +24,8 @@
     cursor: pointer;
 }
 .logoimg{
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     margin-bottom: 9vh;
     margin-top: 31px;
 

@@ -34,6 +34,9 @@ function App() {
     setCat(valuesrch)
     setApi(`https://newsapi.org/v2/everything?q=${cat}&apiKey=${apikey}&pageSize=99`)
   }
+
+
+
   return (
     <div className="App">
       <Navbar sendData={changecat} s={srch} />

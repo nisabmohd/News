@@ -1,6 +1,5 @@
 import React from 'react'
 import logoimg from './ico/image.png'
-// import world from './ico/world.png'
 import uk from './ico/uk.png'
 import usa from './ico/usa.png'
 import ind from './ico/in.png'
@@ -10,9 +9,13 @@ import ae from './ico/uae.png'
 import ch from './ico/china.png'
 import ru from './ico/russia.png'
 import './css/Leftbar.css'
+import top from './ico/top.png'
 export default function Leftbar(props) {
     function demoMethod(a) {
         props.sendDatacn(a);
+    }
+    function topFunction() {
+        window.scrollTo(0, 0);
     }
     return (
         <div>
@@ -21,7 +24,6 @@ export default function Leftbar(props) {
                     <img className="logoimg" src={logoimg} alt="" />
                 </div>
                 <div className="country">
-                    {/* <img className="flatico" src={world} alt="" /> */}
                     <img onClick={() => { demoMethod('us') }} className="flatico" src={usa} alt="" />
                     <img onClick={() => { demoMethod('gb') }} className="flatico" src={uk} alt="" />
                     <img onClick={() => { demoMethod('in') }} className="flatico" src={ind} alt="" />
@@ -31,6 +33,9 @@ export default function Leftbar(props) {
                     <img onClick={() => { demoMethod('ch') }} className="flatico" src={ch} alt="" />
                     <img onClick={() => { demoMethod('ru') }} className="flatico" src={ru} alt="" />
 
+                </div>
+                <div className="totop">
+                    <img src={top} onClick={topFunction} style={{ marginRight: '12px', marginTop: '72px', cursor: 'pointer' }} className="flatico" alt="" />
                 </div>
             </div>
         </div>

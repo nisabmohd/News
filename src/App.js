@@ -5,22 +5,25 @@ import './css/Button.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Newsframe from './Newsframe';
+import load from './ico/load.gif'
 function App() {
 
   // your API key there in double quotes
-        //here is a temporay api for use 
-    const apikey="ffe4806ecb8a4868a3e52b5731eb4d94"
+  //here is a temporay api for use 
+  const apikey = "ffe4806ecb8a4868a3e52b5731eb4d94"
   //
+  const [loading, setLoading] = useState(true)
   const [news, setNews] = useState([]);
   const [country, setCountry] = useState('us');
   const [cat, setCat] = useState('general')
   const [api, setApi] = useState(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apikey}&pageSize=99`)
   useEffect(() => {
     async function getData() {
+      setLoading(true)
       const response = await axios.get(api)
       setNews(response.data.articles);
-      
-      return ()=>{setNews("");setCat('');setCountry('');setApi('')}
+      setLoading(false)
+      return () => { setNews(""); setCat(''); setCountry(''); setApi(''); }
     }
     getData()
   }, [api])
@@ -37,8 +40,6 @@ function App() {
     setApi(`https://newsapi.org/v2/everything?q=${cat}&apiKey=${apikey}&pageSize=99`)
   }
 
-
-
   return (
     <div className="App">
       <Navbar sendData={changecat} s={srch} />
@@ -46,22 +47,33 @@ function App() {
         <div className="leftbar">
           <Leftbar sendDatacn={changecountry} />
         </div>
-        <div className="pageframe">
-          <div className="newsframe">
-            {
-              news.map((item) => {
-                return <Newsframe id={item.id} headline={item.title} img={item.urlToImage} content={item.content} url={item.url} />
-              })
-            }
-
-          </div>
-          <div className="buttons">
-            <div className='btns'>
-              {/* <button disabled={page===1} onClick={()=>setPage(page - 1)}>Previous</button>
-              <button onClick={()=>setPage(page + 1)}>Next</button> */}
+        {loading === true ?
+          (
+            <div className='loading'>
+              <img style={{ width: '95px' }} src={load} alt="" />
             </div>
-          </div>
-        </div>
+          )
+          :
+          (
+            <div className="pageframe">
+              <div className="newsframe">
+                {
+                  news.map((item) => {
+                    return <Newsframe id={item.id} headline={item.title} img={item.urlToImage} content={item.content} url={item.url} />
+                  })
+                }
+
+              </div>
+              <div className="buttons">
+                <div className='btns'>
+                  {/* <button disabled={page===1} onClick={()=>setPage(page - 1)}>Previous</button>
+              <button onClick={()=>setPage(page + 1)}>Next</button> */}
+                </div>
+              </div>
+            </div>
+          )
+        }
+
       </div>
     </div>
   );

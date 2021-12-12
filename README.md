@@ -23,7 +23,7 @@
 
 
 <p align="center">
-  <img src="images/apikey.png" >
+  <img src="images/apikey.jpg" >
 
 </p>
 

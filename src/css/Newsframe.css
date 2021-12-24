@@ -31,13 +31,13 @@
     border-radius: 15px;
     
 }
-.buttonreadmore button:hover + .buttonreadmore button a:hover{
+.buttonreadmore button:hover  .buttonreadmore button a:hover{
     background-color: gray;
     color: black;
 }
 .buttonreadmore button a{
     font-size: 16px;
-    color: rgb(121, 121, 121);
+    color: rgb(126, 126, 126);
     text-decoration: none;
 
 }

@@ -11,6 +11,7 @@ export default function Navbar(props) {
     }
     function sendsearch(){
         props.s(sr)
+        document.getElementById('sbrnv').value="";
     }
     return (
         <div>
@@ -25,7 +26,7 @@ export default function Navbar(props) {
                     <p onClick={() => demoMethod('technology')}>#Technology</p>
                 </div>
                 <div className="searchbarnav">
-                    <input onChange={searchdata} type="text" placeholder="Search" id="" />
+                    <input onChange={searchdata} type="text" placeholder="Search" id="sbrnv" />
                     <img onClick={sendsearch} src={searchicon} alt="" />
                 </div>
             </div>

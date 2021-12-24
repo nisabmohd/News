@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 .searchbarnav{
-    border-bottom: 2px solid rgb(160, 160, 160);
+    border-bottom: 1.8px solid rgb(116, 116, 116);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -31,6 +31,7 @@
     padding: 0 12px;
     padding-bottom: 6px;
     margin-right: 12px;
+   
 }
 .searchbarnav input{
     border: none;
@@ -39,6 +40,7 @@
     font-weight: 550;
     width: 288px;
     color: rgb(160, 160, 160);
+    background-color: transparent;
 }
 .searchbarnav img{
     width: 16px;

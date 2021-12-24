@@ -1,5 +1,4 @@
 import React from 'react'
-import logoimg from './ico/image.png'
 import uk from './ico/uk.png'
 import usa from './ico/usa.png'
 import ind from './ico/in.png'
@@ -9,19 +8,37 @@ import ae from './ico/uae.png'
 import ch from './ico/china.png'
 import ru from './ico/russia.png'
 import './css/Leftbar.css'
-import top from './ico/top.png'
 export default function Leftbar(props) {
     function demoMethod(a) {
         props.sendDatacn(a);
     }
+    function darkmodesend(){
+        props.darkmodeget();
+    }
     function topFunction() {
         window.scrollTo(0, 0);
     }
+    const darkstyle={
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
+        width: 'fit-content',
+        padding: '0 19px',
+        zIndex: '999',
+        // backgroundColor: 'rgb(22, 22, 22)',
+        // borderRight: '0.1px solid rgb(248, 248, 248)',
+        position: 'fixed',
+        top:'0px',
+        left:'0px',
+        alignItems: 'center',
+        backgroundColor: 'transparent',
+
+    }
     return (
         <div>
-            <div className="leftbar">
+            <div className="leftbar" style={darkstyle} >
                 <div className="logo">
-                    <img className="logoimg" src={logoimg} alt="" />
+                    <img className="logoimg" src={props.logo} alt="" />
                 </div>
                 <div className="country">
                     <img onClick={() => { demoMethod('us') }} className="flatico" src={usa} alt="" />
@@ -35,7 +52,10 @@ export default function Leftbar(props) {
 
                 </div>
                 <div className="totop">
-                    <img src={top} onClick={topFunction} style={{ marginRight: '12px', marginTop: '72px', cursor: 'pointer' }} className="flatico" alt="" />
+                    <img src={props.top} onClick={topFunction} style={{ marginRight: '12px', marginTop: '72px', cursor: 'pointer' }} className="flatico" alt="" />
+                </div>
+                <div className="modechange">
+                    <img onClick={darkmodesend} className="flatico" src={props.aimg} alt='' />
                 </div>
             </div>
         </div>

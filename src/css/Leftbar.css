@@ -2,19 +2,6 @@
     width: 27px;
     height: 27px;
 }
-.leftbar{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: fit-content;
-    padding: 0 14px;
-    z-index: 999;
-    background-color: rgb(255, 255, 255);
-    border-right: 0.1px solid rgb(248, 248, 248);
-    box-shadow: inset;
-    position: fixed;
-    top:2px;
-}
 .country{
     display: flex;
     flex-direction: column;
@@ -41,4 +28,12 @@
         background-color: rgb(255, 255, 255);
     }
    
+}
+.modechange{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: -13px;
+    margin-top: 19px;
+    cursor: pointer;
 }

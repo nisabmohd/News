@@ -52,7 +52,7 @@ export default function Leftbar(props) {
 
                 </div>
                 <div className="totop">
-                    <img src={props.top} onClick={topFunction} style={{ marginRight: '12px', marginTop: '72px', cursor: 'pointer' }} className="flatico" alt="" />
+                    <img src={props.top} title="Back To Top" onClick={topFunction} style={{ marginRight: '12px', marginTop: '72px', cursor: 'pointer' }} className="flatico" alt="" />
                 </div>
                 <div className="modechange">
                     <img onClick={darkmodesend} className="flatico" src={props.aimg} alt='' />

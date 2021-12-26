@@ -12,18 +12,20 @@ import logo1 from './ico/image1.png'
 import logo from './ico/image.png'
 import lightimg from './ico/night-mode.png'
 import darkimg from './ico/day-mode.png'
+import toast, { Toaster } from 'react-hot-toast';
 function App() {
   const [topimg,setTopimg]=useState(top)
   const [logimg,setLogoImg]=useState(logo1)
   const [mode,setmode]=useState(lightimg)
   // your API key there in double quotes
   //here is a temporay api for use 
-        const apikey = "ffe4806ecb8a4868a3e52b5731eb4d94"
+        const apikey = "809e5b65cdf04f2e9fb871bfe1ad88f6"
   //
   const [loading, setLoading] = useState(true)
   const [news, setNews] = useState([]);
   const [country, setCountry] = useState('us');
   const [cat, setCat] = useState('general')
+  console.log(cat);
   const [api, setApi] = useState(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apikey}&pageSize=99`)
   const [dark,setdark]=useState(false)
   useEffect(() => {
@@ -35,18 +37,20 @@ function App() {
       return () => { setNews(""); setCat(''); setCountry(''); setApi(''); }
     }
     getData()
-  }, [api])
+  },[api])
   function changecat(valuect) {
     setCat(valuect)
-    setApi(`https://newsapi.org/v2/everything?q=${cat}&apiKey=${apikey}&pageSize=99`)
+    setApi(`https://newsapi.org/v2/everything?q=${valuect}&apiKey=${apikey}&pageSize=99`)
   }
   function changecountry(value) {
+    console.log(value);
     setCountry(value);
-    setApi(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apikey}&pageSize=99`)
+    setApi(`https://newsapi.org/v2/top-headlines?country=${value}&apiKey=${apikey}&pageSize=99`)
   }
   function srch(valuesrch) {
+    console.log(valuesrch);
     setCat(valuesrch)
-    setApi(`https://newsapi.org/v2/everything?q=${cat}&apiKey=${apikey}&pageSize=99`)
+    setApi(`https://newsapi.org/v2/everything?q=${valuesrch}&apiKey=${apikey}&pageSize=99`)
   }
   function darkmode(){
     if(dark===false){
@@ -55,6 +59,14 @@ function App() {
       setTopimg(top1)
       setLogoImg(logo)
       setmode(darkimg)
+      toast('Dark Mode Enabled', {
+        duration: 1200,
+        position: 'top-center',
+        ariaProps: {
+          role: 'status',
+          'aria-live': 'polite',
+        },
+      });
       setdark(true)
       return;
     }
@@ -64,6 +76,14 @@ function App() {
       setTopimg(top)
       setLogoImg(logo1)
       setmode(lightimg)
+      toast('Dark Mode Disabled', {
+        duration: 1200,
+        position: 'top-center',
+        ariaProps: {
+          role: 'status',
+          'aria-live': 'polite',
+        },
+      });
       setdark(false)
       return;
     }
@@ -72,6 +92,7 @@ function App() {
   return (
     <div className="App">
       <Navbar sendData={changecat} s={srch} />
+      <Toaster />
       <div className="bottompage">
         <div className="leftbar">
           <Leftbar top={topimg} logo={logimg} aimg={mode} darkmodeget={darkmode} sendDarkStyle={dark} sendDatacn={changecountry} />

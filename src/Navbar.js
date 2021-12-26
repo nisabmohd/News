@@ -17,8 +17,8 @@ export default function Navbar(props) {
         <div>
             <div className="navbar">
                 <div className="tagsnavbar">
-                    <p onClick={() => demoMethod('general')}>#General</p>
-                    <p onClick={() => demoMethod('business')}>#Business</p>
+                    <p onClick={() => {demoMethod('general');}}>#General</p>
+                    <p onClick={() => {demoMethod('business');}}>#Business</p>
                     <p onClick={() => demoMethod('sports')}>#Sports</p>
                     <p onClick={() => demoMethod('health')}>#Health</p>
                     <p onClick={() => demoMethod('science')}>#Science</p>
@@ -27,7 +27,7 @@ export default function Navbar(props) {
                 </div>
                 <div className="searchbarnav">
                     <input onChange={searchdata} type="text" placeholder="Search" id="sbrnv" />
-                    <img onClick={sendsearch} src={searchicon} alt="" />
+                    <img style={{cursor:'pointer'}} onClick={sendsearch} src={searchicon} alt="" />
                 </div>
             </div>
         </div>

@@ -1,16 +1,16 @@
 .imageurl img{
-    width:90%;
+    width:92%;
     height: 250px;
-    border-radius: 15px;
+    border-radius: 16px;
+    margin-bottom: 9px;
 }
 .headlines h3{
     font-size: 22px;
-    margin-bottom: 12px;
+    margin-bottom: 22px;
 }
 .newsframe{
-    width: 90%;
-    margin: auto;
-    /* background-color: antiquewhite; */
+    width: 96%;
+    margin-left: auto;
 }
 .description p{
     font-size: 18px;
@@ -40,4 +40,7 @@
     color: rgb(126, 126, 126);
     text-decoration: none;
 
+}
+.newsbox{
+    margin-bottom: 12px;
 }

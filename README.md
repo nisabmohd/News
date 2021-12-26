@@ -4,21 +4,23 @@
 #### • 𝙣𝙚𝙬𝙨𝘼𝙋𝙄
 #### • 𝙜𝙝 𝙥𝙖𝙜𝙚𝙨
 <!-- #### 𝘾𝙝𝙚𝙘𝙠 𝙤𝙪𝙩 𝙩𝙝𝙚 𝙙𝙚𝙥𝙡𝙤𝙮𝙢𝙚𝙣𝙩 : https://nisabmohd.github.io/news/ -->
+##  
 
 
-
-<br/>
-
-#### 𝙎𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩𝙨 : 
+### 𝙎𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩𝙨 : 
 
 <p align="center">
+  <p>𝗟𝗶𝗴𝗵𝘁 𝗺𝗼𝗱𝗲 : </p>
   <img src="images/1.png" >
   <img src="images/2.png">
-   <img src="images/3.png">
+   <p>𝗗𝗮𝗿𝗸 𝗺𝗼𝗱𝗲 : </p>
+    <img src="images/1-1.png" >
+   <img src="images/2-2.png">
+ 
 
 </p>
-<br/>
 
+##  
 
 𝙉𝙊𝙏𝙀: 𝘿𝙤𝙣𝙩 𝙛𝙤𝙧𝙜𝙚𝙩 𝙩𝙤 𝙪𝙨𝙚 𝙮𝙤𝙪𝙧 𝘼𝙋𝙄𝙠𝙚𝙮 𝙗𝙮 𝙜𝙚𝙩𝙩𝙞𝙣𝙜 𝙖𝙩          https://newsapi.org/
 

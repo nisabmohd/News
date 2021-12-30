@@ -21,7 +21,7 @@ export default function Leftbar(props) {
     const darkstyle={
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
+        height: '100%',
         width: 'fit-content',
         padding: '0 19px',
         zIndex: '999',
@@ -31,7 +31,8 @@ export default function Leftbar(props) {
         top:'0px',
         left:'0px',
         alignItems: 'center',
-        backgroundColor: 'transparent',
+        // backgroundColor: 'rgb(33,33,33)',
+        backgroundColor:props.bglf
 
     }
     return (

@@ -17,6 +17,7 @@ function App() {
   const [topimg,setTopimg]=useState(top)
   const [logimg,setLogoImg]=useState(logo1)
   const [mode,setmode]=useState(lightimg)
+  const [leftbarcolor,setleftbarcol]=useState('rgb(239,239,239)')
   // your API key there in double quotes
   //here is a temporay api for use 
         const apikey = "809e5b65cdf04f2e9fb871bfe1ad88f6"
@@ -67,6 +68,7 @@ function App() {
           'aria-live': 'polite',
         },
       });
+      setleftbarcol('rgb(33,33,33)')
       setdark(true)
       return;
     }
@@ -83,7 +85,12 @@ function App() {
           role: 'status',
           'aria-live': 'polite',
         },
+        style: {
+          backgroundColor:'gray',
+          color:'white'
+        },
       });
+      setleftbarcol('rgb(239,239,239)')
       setdark(false)
       return;
     }
@@ -95,11 +102,11 @@ function App() {
       <Toaster />
       <div className="bottompage">
         <div className="leftbar">
-          <Leftbar top={topimg} logo={logimg} aimg={mode} darkmodeget={darkmode} sendDarkStyle={dark} sendDatacn={changecountry} />
+          <Leftbar top={topimg} logo={logimg} aimg={mode} darkmodeget={darkmode} sendDarkStyle={dark} bglf={leftbarcolor} sendDatacn={changecountry} />
         </div>
         {loading === true ?
           (
-            <div className='loading'>
+            <div className='loading' style={{width:'fit-content',margin:'auto'}}>
               <img style={{ width: '95px' }} src={load} alt="" />
             </div>
           )

@@ -1,26 +1,30 @@
 .imageurl img{
-    width:92%;
-    height: 250px;
+    width:100%;
+    height: 270px;
     border-radius: 16px;
     margin-bottom: 9px;
 }
 .headlines h3{
-    font-size: 22px;
+    font-size: 21px;
     margin-bottom: 22px;
+    
 }
 .newsframe{
-    width: 96%;
+    width: 95%;
     margin-left: auto;
 }
 .description p{
     font-size: 18px;
+    
 }
 .newsbox{
-    width: 450px;
+    position: relative;
+    width: 430px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;padding:0 16px
+    text-align: center;padding:0 16px;
+    text-decoration: none;
 }
 .buttonreadmore button{
     background-color: transparent;
@@ -43,4 +47,15 @@
 }
 .newsbox{
     margin-bottom: 12px;
+}
+
+@media screen and (max-width:706px){
+    .newsframe{
+        width: 90%;
+        margin-left: auto;
+    }
+}
+.content{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14.25px;
 }

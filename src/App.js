@@ -20,13 +20,13 @@ function App() {
   const [leftbarcolor,setleftbarcol]=useState('rgb(239,239,239)')
   // your API key there in double quotes
   //here is a temporay api for use 
-        const apikey = "809e5b65cdf04f2e9fb871bfe1ad88f6"
+        const apikey = "242c43a29493484185c0e512ad653254"
   //
   const [loading, setLoading] = useState(true)
   const [news, setNews] = useState([]);
   const [country, setCountry] = useState('us');
   const [cat, setCat] = useState('general')
-  console.log(cat);
+  // console.log(cat);
   const [api, setApi] = useState(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apikey}&pageSize=99`)
   const [dark,setdark]=useState(false)
   useEffect(() => {
@@ -34,23 +34,49 @@ function App() {
       setLoading(true)
       const response = await axios.get(api)
       setNews(response.data.articles);
+      if(response.data.totalResults ===0){
+        toast.error('Sorry No Data Found', {
+          duration: 1200,
+          position: 'center',
+          ariaProps: {
+            role: 'status',
+            'aria-live': 'polite',
+          },
+          style: {
+            backgroundColor:'gray',
+            color:'white'
+          },
+        });
+      }
       setLoading(false)
       return () => { setNews(""); setCat(''); setCountry(''); setApi(''); }
     }
     getData()
-  },[api])
+  },[country,api,cat])
   function changecat(valuect) {
+    setApi(`https://newsapi.org/v2/top-headlines?country=${country}&category=${valuect}&apiKey=${apikey}&pageSize=99`)
     setCat(valuect)
-    setApi(`https://newsapi.org/v2/everything?q=${valuect}&apiKey=${apikey}&pageSize=99`)
   }
   function changecountry(value) {
-    console.log(value);
+    toast.success(`Country changed to:  ${value}`, {
+      duration: 1200,
+      position: 'top-center',
+      ariaProps: {
+        role: 'status',
+        'aria-live': 'polite',
+      },
+      style: {
+        backgroundColor:'gray',
+        color:'white',
+        fontWeight:'bold'
+      },
+    });
+    setApi(`https://newsapi.org/v2/top-headlines?country=${value}&category=${cat}&apiKey=${apikey}&pageSize=99`)
     setCountry(value);
-    setApi(`https://newsapi.org/v2/top-headlines?country=${value}&apiKey=${apikey}&pageSize=99`)
+    console.log(api);
+    console.log(api)
   }
   function srch(valuesrch) {
-    console.log(valuesrch);
-    setCat(valuesrch)
     setApi(`https://newsapi.org/v2/everything?q=${valuesrch}&apiKey=${apikey}&pageSize=99`)
   }
   function darkmode(){
@@ -60,7 +86,7 @@ function App() {
       setTopimg(top1)
       setLogoImg(logo)
       setmode(darkimg)
-      toast('Dark Mode Enabled', {
+      toast.success('Dark Mode Enabled', {
         duration: 1200,
         position: 'top-center',
         ariaProps: {
@@ -78,7 +104,7 @@ function App() {
       setTopimg(top)
       setLogoImg(logo1)
       setmode(lightimg)
-      toast('Dark Mode Disabled', {
+      toast.success('Dark Mode Disabled', {
         duration: 1200,
         position: 'top-center',
         ariaProps: {
@@ -95,7 +121,6 @@ function App() {
       return;
     }
   }
-// console.log(dark);
   return (
     <div className="App">
       <Navbar sendData={changecat} s={srch} />
@@ -113,6 +138,10 @@ function App() {
           :
           (
             <div className="pageframe">
+              <div className="header">
+                <h3>Country code: {country}</h3>
+                <h4>Cateogery : {cat}</h4>
+              </div>
               <div className="newsframe">
                 {
                   news.map((item) => {

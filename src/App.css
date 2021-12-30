@@ -75,3 +75,6 @@
   align-items: center;
   justify-content: center;
 }
+.header{
+  display: none
+}

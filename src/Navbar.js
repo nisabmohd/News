@@ -16,9 +16,9 @@ export default function Navbar(props) {
     return (
         <div>
             <div className="navbar">
-                <div className="tagsnavbar">
-                    <p onClick={() => {demoMethod('general');}}>#General</p>
-                    <p onClick={() => {demoMethod('business');}}>#Business</p>
+                <div id='nbar' className="tagsnavbar">
+                    <p id="gnrl" onClick={(e) => {demoMethod('general');}}>#General</p>
+                    <p id="bsn" onClick={(e) => {demoMethod('business');}}>#Business</p>
                     <p onClick={() => demoMethod('sports')}>#Sports</p>
                     <p onClick={() => demoMethod('health')}>#Health</p>
                     <p onClick={() => demoMethod('science')}>#Science</p>

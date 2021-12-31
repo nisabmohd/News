@@ -17,6 +17,7 @@ function App() {
   const [topimg,setTopimg]=useState(top)
   const [logimg,setLogoImg]=useState(logo1)
   const [mode,setmode]=useState(lightimg)
+  const [navbarcol,setnavbarcol]=useState('Black')
   const [leftbarcolor,setleftbarcol]=useState('rgb(239,239,239)')
   // your API key there in double quotes
   //here is a temporay api for use 
@@ -85,6 +86,7 @@ function App() {
       document.body.style.color="rgb(160, 160, 160)";
       setTopimg(top1)
       setLogoImg(logo)
+      setnavbarcol("white")
       setmode(darkimg)
       toast.success('Dark Mode Enabled', {
         duration: 1200,
@@ -103,6 +105,7 @@ function App() {
       document.body.style.color="black";
       setTopimg(top)
       setLogoImg(logo1)
+      setnavbarcol("black")
       setmode(lightimg)
       toast.success('Dark Mode Disabled', {
         duration: 1200,
@@ -123,11 +126,11 @@ function App() {
   }
   return (
     <div className="App">
-      <Navbar sendData={changecat} s={srch} />
+      <Navbar col={navbarcol} sendData={changecat} s={srch} />
       <Toaster />
       <div className="bottompage">
         <div className="leftbar">
-          <Leftbar top={topimg} logo={logimg} aimg={mode} darkmodeget={darkmode} sendDarkStyle={dark} bglf={leftbarcolor} sendDatacn={changecountry} />
+          <Leftbar col={country} top={topimg} logo={logimg} aimg={mode} darkmodeget={darkmode} sendDarkStyle={dark} bglf={leftbarcolor} sendDatacn={changecountry} />
         </div>
         {loading === true ?
           (

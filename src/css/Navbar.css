@@ -39,11 +39,11 @@
     font-size: 13.5px;
     font-weight: 550;
     width: 288px;
-    color: rgb(160, 160, 160);
+    color: rgb(114, 113, 113);
     background-color: transparent;
 }
 .searchbarnav input::placeholder{
-    color: gray;
+    color: rgb(114, 113, 113);
 }
 .searchbarnav img{
     width: 16px;

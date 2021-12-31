@@ -19,10 +19,10 @@
     margin-top: 31px;
 
 }
-.leftbar{
-    width: fit-content;
+/* .leftbar{
+    width: 38px;
     position: relative;
-}
+} */
 @media screen and (max-width:500px){
     .leftbar{
         display: flex;

@@ -88,7 +88,7 @@ function App() {
       setLogoImg(logo)
       setnavbarcol("white")
       setmode(darkimg)
-      toast.success('Dark Mode Enabled', {
+      toast('Dark Mode Enabled', {
         duration: 1200,
         position: 'top-center',
         ariaProps: {
@@ -107,7 +107,7 @@ function App() {
       setLogoImg(logo1)
       setnavbarcol("black")
       setmode(lightimg)
-      toast.success('Dark Mode Disabled', {
+      toast('Dark Mode Disabled', {
         duration: 1200,
         position: 'top-center',
         ariaProps: {

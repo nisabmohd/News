@@ -39,9 +39,8 @@
 .pageframe{
   display: flex;
   flex-direction: column;
-  /* overflow-y: scroll; */
   margin: auto;
-  width: 98%;
+  width: 100%;
 }
 .newsframe{
   padding-top: 20px;

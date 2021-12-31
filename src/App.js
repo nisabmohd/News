@@ -20,9 +20,10 @@ function App() {
   const [navbarcol,setnavbarcol]=useState('Black')
   const [leftbarcolor,setleftbarcol]=useState('rgb(239,239,239)')
   // your API key there in double quotes
-  //here is a temporay api for use 
-        const apikey = "242c43a29493484185c0e512ad653254"
-  //
+  //here is a temporay api for use :
+  //-----------------------------------------------
+  const apikey = "e3192ea88c944bd3a871dfcd4a68407a"
+  //-----------------------------------------------
   const [loading, setLoading] = useState(true)
   const [news, setNews] = useState([]);
   const [country, setCountry] = useState('us');

@@ -35,7 +35,7 @@ export default function Leftbar(props) {
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
-        widtg:'39px',
+        width:'39px',
         padding: '0 19px',
         zIndex: '999',
         position: 'fixed',

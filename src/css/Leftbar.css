@@ -5,6 +5,8 @@
 .country{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-top: 22px;
 }
 .country img{
     margin:16px 0;
@@ -13,9 +15,13 @@
 .logoimg{
     width: 32px;
     height: 32px;
-    margin-bottom: 9vh;
+    margin-bottom: 31px;
     margin-top: 31px;
 
+}
+.leftbar{
+    width: fit-content;
+    position: relative;
 }
 @media screen and (max-width:500px){
     .leftbar{
@@ -36,4 +42,17 @@
     margin-left: -13px;
     margin-top: 19px;
     cursor: pointer;
+}
+.activecount{
+    width: fit-content;
+    height: fit-content;
+    /* background-color: rgb(161, 161, 161); */
+    border-radius: 12px;
+    height: 40px;
+    padding: 3px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0 ;
+    margin-left: -7px;
 }

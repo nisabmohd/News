@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useEffect,useState}from 'react'
 import uk from './ico/uk.png'
 import usa from './ico/usa.png'
 import ind from './ico/in.png'
@@ -9,31 +9,52 @@ import ch from './ico/china.png'
 import ru from './ico/russia.png'
 import './css/Leftbar.css'
 export default function Leftbar(props) {
+    const [idst, setid] = useState('usa')
+    useEffect(() => {
+        document.getElementById('usa').style.backgroundColor = props.bglf
+        document.getElementById('gb').style.backgroundColor = props.bglf
+        document.getElementById('in').style.backgroundColor = props.bglf
+        document.getElementById('jp').style.backgroundColor = props.bglf
+        document.getElementById('eg').style.backgroundColor = props.bglf
+        document.getElementById('ae').style.backgroundColor = props.bglf
+        document.getElementById('ch').style.backgroundColor = props.bglf
+        document.getElementById('ru').style.backgroundColor = props.bglf
+
+        document.getElementById(idst).style.backgroundColor = "rgb(191, 191, 191)"
+    }, [props.bglf,idst])
     function demoMethod(a) {
         props.sendDatacn(a);
     }
-    function darkmodesend(){
+    function darkmodesend() {
         props.darkmodeget();
     }
     function topFunction() {
         window.scrollTo(0, 0);
     }
-    const darkstyle={
+    const darkstyle = {
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
         width: 'fit-content',
         padding: '0 19px',
         zIndex: '999',
-        // backgroundColor: 'rgb(22, 22, 22)',
-        // borderRight: '0.1px solid rgb(248, 248, 248)',
         position: 'fixed',
-        top:'0px',
-        left:'0px',
+        top: '0px',
+        left: '0px',
         alignItems: 'center',
-        // backgroundColor: 'rgb(33,33,33)',
-        backgroundColor:props.bglf
-
+        backgroundColor: props.bglf
+    }
+    function colour(id) {
+        document.getElementById('usa').style.backgroundColor = props.bglf
+        document.getElementById('gb').style.backgroundColor = props.bglf
+        document.getElementById('in').style.backgroundColor = props.bglf
+        document.getElementById('jp').style.backgroundColor = props.bglf
+        document.getElementById('eg').style.backgroundColor = props.bglf
+        document.getElementById('ae').style.backgroundColor = props.bglf
+        document.getElementById('ch').style.backgroundColor = props.bglf
+        document.getElementById('ru').style.backgroundColor = props.bglf
+        setid(id)
+        document.getElementById(idst).style.backgroundColor ="rgb(198, 198, 191)"
     }
     return (
         <div>
@@ -42,14 +63,30 @@ export default function Leftbar(props) {
                     <img className="logoimg" src={props.logo} alt="" />
                 </div>
                 <div className="country">
-                    <img onClick={() => { demoMethod('us') }} className="flatico" src={usa} alt="" />
-                    <img onClick={() => { demoMethod('gb') }} className="flatico" src={uk} alt="" />
-                    <img onClick={() => { demoMethod('in') }} className="flatico" src={ind} alt="" />
-                    <img onClick={() => { demoMethod('jp') }} className="flatico" src={jp} alt="" />
-                    <img onClick={() => { demoMethod('eg') }} className="flatico" src={eg} alt="" />
-                    <img onClick={() => { demoMethod('ae') }} className="flatico" src={ae} alt="" />
-                    <img onClick={() => { demoMethod('ch') }} className="flatico" src={ch} alt="" />
-                    <img onClick={() => { demoMethod('ru') }} className="flatico" src={ru} alt="" />
+                    <div id="usa" className='activecount' onClick={() => { demoMethod('us'); colour('usa') }}>
+                        <img className="flatico" src={usa} alt="" />
+                    </div>
+                    <div id="gb" className='activecount' onClick={() => { demoMethod('gb'); colour('gb') }} >
+                        <img className="flatico" src={uk} alt="" />
+                    </div>
+                    <div id="in" className='activecount' onClick={() => { demoMethod('in'); colour('in') }} >
+                        <img className="flatico" src={ind} alt="" />
+                    </div>
+                    <div id="jp" className='activecount' onClick={() => { demoMethod('jp'); colour('jp') }}>
+                        <img className="flatico" src={jp} alt="" />
+                    </div>
+                    <div id="eg" className='activecount' onClick={() => { demoMethod('eg'); colour('eg') }}>
+                        <img className="flatico" src={eg} alt="" />
+                    </div>
+                    <div id="ae" className='activecount' onClick={() => { demoMethod('ae'); colour('ae') }} >
+                        <img className="flatico" src={ae} alt="" />
+                    </div>
+                    <div id="ch" className='activecount' onClick={() => { demoMethod('ch'); colour('ch') }}>
+                        <img className="flatico" src={ch} alt="" />
+                    </div>
+                    <div id="ru" className='activecount' onClick={() => { demoMethod('ru'); colour('ru') }}>
+                        <img className="flatico" src={ru} alt="" />
+                    </div>
 
                 </div>
                 <div className="totop">

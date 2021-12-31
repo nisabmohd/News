@@ -13,10 +13,10 @@
 <p align="center">
   <p>𝗟𝗶𝗴𝗵𝘁 𝗺𝗼𝗱𝗲 : </p>
   <img src="images/1.png" >
-  <img src="images/2.png">
+  <img src="images/2-2.png">
    <p>𝗗𝗮𝗿𝗸 𝗺𝗼𝗱𝗲 : </p>
     <img src="images/1-1.png" >
-   <img src="images/2-2.png">
+   <img src="images/2.png">
  
 
 </p>

@@ -18,7 +18,7 @@ function App() {
   const [logimg,setLogoImg]=useState(logo1)
   const [mode,setmode]=useState(lightimg)
   const [navbarcol,setnavbarcol]=useState('Black')
-  const [leftbarcolor,setleftbarcol]=useState('rgb(239,239,239)')
+  const [leftbarcolor,setleftbarcol]=useState('rgb(220,220,220)')
   // your API key there in double quotes
   //here is a temporay api for use :
   //-----------------------------------------------

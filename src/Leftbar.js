@@ -19,8 +19,9 @@ export default function Leftbar(props) {
         document.getElementById('ae').style.backgroundColor = props.bglf
         document.getElementById('ch').style.backgroundColor = props.bglf
         document.getElementById('ru').style.backgroundColor = props.bglf
+        document.getElementById(idst).style.backgroundColor = "rgb(255,255,255)"
 
-        document.getElementById(idst).style.backgroundColor = "rgb(191, 191, 191)"
+        // document.getElementById(idst).style.backgroundColor = "rgb(191, 191, 191)"
     }, [props.bglf,idst])
     function demoMethod(a) {
         props.sendDatacn(a);
@@ -54,7 +55,9 @@ export default function Leftbar(props) {
         document.getElementById('ch').style.backgroundColor = props.bglf
         document.getElementById('ru').style.backgroundColor = props.bglf
         setid(id)
-        document.getElementById(idst).style.backgroundColor ="rgb(198, 198, 191)"
+        document.getElementById(idst).style.backgroundColor = "rgb(255,255,255)"
+
+        // document.getElementById(idst).style.backgroundColor ="rgb(198, 198, 191)"
     }
     return (
         <div>

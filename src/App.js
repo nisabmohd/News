@@ -13,6 +13,8 @@ import logo from './ico/image.png'
 import lightimg from './ico/night-mode.png'
 import darkimg from './ico/day-mode.png'
 import toast, { Toaster } from 'react-hot-toast';
+import LoadingBar from 'react-top-loading-bar'
+
 function App() {
   const [topimg,setTopimg]=useState(top)
   const [logimg,setLogoImg]=useState(logo1)
@@ -22,7 +24,7 @@ function App() {
   // your API key there in double quotes
   //here is a temporay api for use :
   //-----------------------------------------------
-  const apikey = "e3192ea88c944bd3a871dfcd4a68407a"
+  const apikey = "e3192ea88c944bd3a871dfcd4a68407a"  
   //-----------------------------------------------
   const [loading, setLoading] = useState(true)
   const [news, setNews] = useState([]);
@@ -31,11 +33,15 @@ function App() {
   // console.log(cat);
   const [api, setApi] = useState(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apikey}&pageSize=99`)
   const [dark,setdark]=useState(false)
+  const [progress, setProgress] = useState(0)
   useEffect(() => {
     async function getData() {
+      setProgress(0)
       setLoading(true)
+      setProgress(70)
       const response = await axios.get(api)
       setNews(response.data.articles);
+      setProgress(70)
       if(response.data.totalResults ===0){
         toast.error('Sorry No Data Found', {
           duration: 1200,
@@ -51,6 +57,7 @@ function App() {
         });
       }
       setLoading(false)
+      setProgress(100)
       return () => { setNews(""); setCat(''); setCountry(''); setApi(''); }
     }
     getData()
@@ -127,6 +134,11 @@ function App() {
   }
   return (
     <div className="App">
+       <LoadingBar
+        color='red'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <Navbar col={navbarcol} sendData={changecat} s={srch} />
       <Toaster />
       <div className="bottompage">
@@ -136,7 +148,8 @@ function App() {
         {loading === true ?
           (
             <div className='loading' style={{width:'fit-content',margin:'auto'}}>
-              <img style={{ width: '95px' }} src={load} alt="" />
+              {/* <img style={{ width: '95px' }} src={load} alt="" /> */}
+             <h4 style={{color:'gray'}}>Loading ....</h4> 
             </div>
           )
           :

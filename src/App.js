@@ -5,7 +5,7 @@ import './css/Button.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Newsframe from './Newsframe';
-import load from './ico/load.gif'
+// import load from './ico/load.gif'
 import top from './ico/top.png'
 import top1 from './ico/top1.png'
 import logo1 from './ico/image1.png'
@@ -38,7 +38,7 @@ function App() {
     async function getData() {
       setProgress(0)
       setLoading(true)
-      setProgress(70)
+      setProgress(55)
       const response = await axios.get(api)
       setNews(response.data.articles);
       setProgress(70)

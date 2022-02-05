@@ -36,7 +36,7 @@ function App() {
   const [progress, setProgress] = useState(0)
   useEffect(() => {
     async function getData() {
-      setProgress(0)
+      setProgress(25)
       setLoading(true)
       setProgress(55)
       const response = await axios.get(api)
@@ -67,19 +67,6 @@ function App() {
     setCat(valuect)
   }
   function changecountry(value) {
-    toast.success(`Country changed to:  ${value}`, {
-      duration: 1200,
-      position: 'top-center',
-      ariaProps: {
-        role: 'status',
-        'aria-live': 'polite',
-      },
-      style: {
-        backgroundColor:'gray',
-        color:'white',
-        fontWeight:'bold'
-      },
-    });
     setApi(`https://newsapi.org/v2/top-headlines?country=${value}&category=${cat}&apiKey=${apikey}&pageSize=99`)
     setCountry(value);
     console.log(api);

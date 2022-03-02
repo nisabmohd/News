@@ -7,8 +7,6 @@
 <!-- #### 𝘾𝙝𝙚𝙘𝙠 𝙤𝙪𝙩 𝙩𝙝𝙚 𝙙𝙚𝙥𝙡𝙤𝙮𝙢𝙚𝙣𝙩 : https://nisabmohd.github.io/news/ -->
 ##  
 
-<br>
-
 ### Screenshots : 
 
 <p align="center">

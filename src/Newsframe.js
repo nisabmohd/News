@@ -1,9 +1,12 @@
 import React from 'react'
 import './css/Newsframe.css'
+// import { Skeletonc } from './Skeletonc'
 export default function Newsframe(props) {
     return (
         <div>
             <div className="newsframe">
+            {/* <Skeletonc col={props.col} /> */}
+            
                 <div className="newsbox">
                     <div className="headlines">
                         {(props.headline) ? <h3>{props.headline.slice(0, 72)}...</h3> : <h3> </h3>}
